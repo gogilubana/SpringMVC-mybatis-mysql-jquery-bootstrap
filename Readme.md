@@ -43,7 +43,7 @@ Spring MVC with (mybatis-mysql) connection and (jquery+bootstrap) integration
 
 >тип varchar
 
-
+>Примечание: не забудьте добавить в вашу таблицу какую-нибудь запись
 
 Если вы настроили вашу базу и сервер успешно запущен.
 
