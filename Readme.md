@@ -37,11 +37,11 @@ Spring MVC with (mybatis-mysql) connection and (jquery+bootstrap) integration
 
 1. id 
 
->тип integer(20)
+>тип integer
 
 2. name 
 
->тип varchar(255)
+>тип varchar
 
 
 
