@@ -1,6 +1,7 @@
 package controller;
 
 
+import com.example.Main;
 import com.example.dao.HelloDAO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,13 +19,14 @@ import service.HelloService;
  */
 public class HelloController extends SimpleFormController {
     private HelloService helloService;
-    
+        
     ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
 		
     DefaultSqlSessionFactory sessionFactory  = (DefaultSqlSessionFactory) ctx.getBean("sqlSessionFactory");
     //SqlSessionFactory sessionFactory = null;
    
     HelloDAO helloDAO = new HelloDAO(sessionFactory);
+    
     
     
     
@@ -53,6 +55,7 @@ public class HelloController extends SimpleFormController {
             HttpServletResponse response, 
             Object command, 
             BindException errors) throws Exception {
+        
         
         Name name = (Name) command;
         ModelAndView mv = new ModelAndView(getSuccessView());

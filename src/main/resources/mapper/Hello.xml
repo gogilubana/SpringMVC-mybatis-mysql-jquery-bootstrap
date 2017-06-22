@@ -11,28 +11,28 @@
     </resultMap>
  
     <select id="selectAll" resultMap="result">
-        SELECT * FROM greet1;
+        SELECT * FROM info;
     </select>
     
- 	<select id="selectById" parameterType="int" resultMap="result">
-        SELECT * FROM greet1 WHERE id = #{id}
+    <select id="selectById" parameterType="int" resultMap="result">
+        SELECT * FROM info WHERE id = #{id}
     </select>
     
     <select id="selectNameById" parameterType="int" resultMap="result">
-        SELECT name FROM greet1 WHERE id = #{id}
+        SELECT name FROM info WHERE id = #{id}
     </select>
     
- 	<insert id="insert" parameterType="Hello" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO greet1 (name) VALUES (#{name});
+    <insert id="insert" parameterType="Hello" useGeneratedKeys="false" keyProperty="id">
+        INSERT IGNORE INTO info (id,name) VALUES (#{id},#{name});
     </insert>
     
     <update id="update" parameterType="Hello">
-        UPDATE greet1
+        UPDATE info
         SET name = #{name}
         WHERE id = #{id}
-  	</update>
+    </update>
  
 	<delete id="delete" parameterType="int">
-        DELETE from greet1 WHERE id = #{id}
+        DELETE from info WHERE id = #{id}
     </delete>
 </mapper>

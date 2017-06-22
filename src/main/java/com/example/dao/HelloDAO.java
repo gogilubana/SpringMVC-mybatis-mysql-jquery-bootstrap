@@ -56,7 +56,7 @@ public class HelloDAO {
        	Hello hello = null;
         SqlSession session = sqlSessionFactory.openSession();
         try {
-        	hello = session.selectOne("Hello.selectNameById", id);
+            hello = session.selectOne("Hello.selectNameById", id);
         } finally {
             session.close();
         }
@@ -67,7 +67,7 @@ public class HelloDAO {
      * @param hello the instance to be persisted.
      */
    public int insert(Hello hello){
-	   int id = -1;
+	   int id = 1; //default value -1
         SqlSession session = sqlSessionFactory.openSession();
 
         try {
